@@ -1,0 +1,12 @@
+<app-header *ngIf="menuService.getMenuDisplay()"></app-header>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened="true"  class="sidenav" *ngIf="menuService.getMenuDisplay()">
+     <ul class="main-sidebar">
+        <li *ngFor="let menuitems of menuService.getMenuConfig()" routerLink="/{{menuitems.link}}">
+<img src="assets/images/svg/{{menuitems.icon}}.svg"/> <span class="menu_name" *ngIf ="sidenav.opened==true">{{menuitems.value}}</span>
+        </li> </ul>
+  </mat-sidenav>
+ 
+    <router-outlet  #outlet></router-outlet>
+  
+</mat-sidenav-container>

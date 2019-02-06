@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.reg-form .mat-form-field:nth-child(2n+0),.p-l-20 {
+    padding-left:20px;
+}
+.radio-grup .mat-radio-labell:first-child {
+    padding-right: 20px;
+}

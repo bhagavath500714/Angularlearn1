@@ -1,0 +1,12 @@
+.page-wrapper::before {
+    content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(254,0,0,0.41));
+  pointer-events: none;
+}

@@ -1,0 +1,31 @@
+<div class="page-wrapper">
+  <div class="example-container animate" style="display: flex;
+  flex-direction: column;
+  min-width: 25%;
+  border: 1px solid #ccc;
+  padding: 40px;
+  border-radius: 5px;
+  background: #f9f9f9;
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+    min-height: 30%;
+    align-items: center;
+    justify-content: center;">
+    <div class="fade-out" *ngIf="isValidUser">Invalid user</div>
+    <form class="login-form" (keyup.enter)="login()" #loginForm="ngForm" style="text-align: center;">
+      <mat-form-field >
+        <input matInput placeholder="Username" type="text" [(ngModel)]="person.username" name="username" required>
+        <mat-error>You must enter a value</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Password" type="password" [(ngModel)]="person.password" name="password" required [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error >You must enter a value</mat-error>
+      </mat-form-field>
+      <button class="btn-min" mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+  </div>
+</div>

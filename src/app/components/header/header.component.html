@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <div style="display: flex;align-items: center;justify-content: space-between;width: 100%;height: 100%;">
+    <div class="logo" style="display: flex;align-items: center;">
+      <img src="../assets/images/Lantos_teal_horizontal.png" style="width:130px;height:40px;">
+    </div>
+    <div class="right-side">
+      <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)='logout()'>Logout</button>
+      </mat-menu>
+    </div>
+  </div>
+</mat-toolbar>
